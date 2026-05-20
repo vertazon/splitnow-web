@@ -5,13 +5,13 @@ import { APP_NAME, APP_TAGLINE, APP_DESCRIPTION } from '@/lib/config';
 // ─── Shared style tokens ──────────────────────────────────────────────────────
 const t1  = '#F8F8F6';   // headings, primary
 const t2  = '#C3C2B7';   // card body copy, descriptions
-const t3  = '#97958C';   // labels, nav links, footer, sub-text
-const t4  = '#97958C';   // same warm gray — footer links, nav links
-const tAcc = '#00D49A';  // accent green
+const t3  = '#97958C';   // non-interactive labels, eyebrows, dates
+const t4  = '#B0AEA6';   // interactive links — nav, footer
+const tAcc = '#00D6A0';  // accent green (slightly warmer)
 
 // Card background
-const cardBg = '#272726';
-const cardBorder = 'rgba(255,255,255,0.07)';
+const cardBg = '#2D2D2C';
+const cardBorder = 'rgba(195,194,183,0.10)';
 
 // Section label style (the UPPERCASE eyebrow above headings)
 const eyebrow: React.CSSProperties = {
@@ -250,7 +250,7 @@ function Nav() {
     <nav className="fixed top-0 inset-x-0 z-50 flex items-center justify-between px-8 py-5"
       style={{
         background: 'rgba(31,31,30,0.92)',
-        borderBottom: '1px solid rgba(255,255,255,0.07)',
+        borderBottom: '1px solid rgba(195,194,183,0.10)',
         backdropFilter: 'blur(20px)',
         WebkitBackdropFilter: 'blur(20px)',
       }}>
@@ -303,7 +303,7 @@ function Hero() {
       {/* Headline */}
       <h1 className="font-extrabold tracking-tight leading-[1.04] mb-7 max-w-3xl"
         style={{ fontSize: 'clamp(48px, 7vw, 80px)', position: 'relative', zIndex: 1 }}>
-        <span style={{ color: t1 }}>Split expenses.{' '}</span>
+        <span style={{ color: '#FFFFFF' }}>Split expenses.{' '}</span>
         <br className="hidden md:block" />
         <span className="text-gradient">Not friendships.</span>
       </h1>
@@ -317,7 +317,7 @@ function Hero() {
       <div className="flex flex-wrap justify-center gap-2 mb-10" style={{ position: 'relative', zIndex: 1 }}>
         {['2-tap logging', 'Real-time balances', 'Personal + shared', 'No bank linkage', 'Free to use'].map(tag => (
           <span key={tag} className="font-semibold px-4 py-2 rounded-full border"
-            style={{ fontSize: 13, background: 'rgba(255,255,255,0.03)', borderColor: 'rgba(255,255,255,0.09)', color: t3 }}>
+            style={{ fontSize: 13, background: 'rgba(195,194,183,0.04)', borderColor: 'rgba(195,194,183,0.12)', color: t3 }}>
             {tag}
           </span>
         ))}
@@ -760,7 +760,7 @@ function FAQ() {
                 style={{ background: 'rgba(255,255,255,0.05)', color: t3, fontSize: 20, lineHeight: 1 }}>+</span>
             </summary>
             <div className="px-7 pb-6">
-              <p style={{ fontSize: 15, lineHeight: 1.7, color: t2, borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 18 }}>{item.a}</p>
+              <p style={{ fontSize: 15, lineHeight: 1.7, color: t2, borderTop: '1px solid rgba(195,194,183,0.10)', paddingTop: 18 }}>{item.a}</p>
             </div>
           </details>
         ))}
@@ -834,7 +834,7 @@ function CtaStrip() {
 
 function Footer() {
   return (
-    <footer className="py-12 px-6 border-t" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
+    <footer className="py-12 px-6 border-t" style={{ borderColor: 'rgba(195,194,183,0.10)' }}>
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5">
         <div className="flex items-center gap-2.5">
           <Image src="/icon.png" alt={APP_NAME} width={24} height={24} className="rounded-md opacity-60" />

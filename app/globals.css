@@ -2,9 +2,9 @@
 
 @theme {
   --color-bg:             #1F1F1E;
-  --color-card:           #272726;
-  --color-card-elevated:  #313130;
-  --color-accent:         #00D49A;
+  --color-card:           #2D2D2C;
+  --color-card-elevated:  #373735;
+  --color-accent:         #00D6A0;
   --color-danger:         #FF5959;
   --color-text-primary:   #F8F8F6;
   --color-text-2:         #C3C2B7;
@@ -16,8 +16,8 @@
 :root {
   --accent-dim: rgba(0, 212, 154, 0.10);
   --accent-mid: rgba(0, 212, 154, 0.22);
-  --border:     rgba(255, 255, 255, 0.07);
-  --border-em:  rgba(255, 255, 255, 0.12);
+  --border:     rgba(195, 194, 183, 0.10);
+  --border-em:  rgba(195, 194, 183, 0.18);
 }
 
 * { box-sizing: border-box; }
@@ -104,7 +104,7 @@ body {
 
 /* ── Stat card ───────────────────────────────────────────────── */
 .stat-card {
-  background: #272726;
+  background: #2D2D2C;
   border: 1px solid rgba(255,255,255,0.07);
   border-radius: 20px;
   padding: 20px 28px;

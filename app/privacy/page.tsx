@@ -6,8 +6,8 @@ import { APP_NAME, CONTACT_EMAIL } from '@/lib/config';
 const t1  = '#F8F8F6';
 const t2  = '#C3C2B7';
 const t3  = '#97958C';
-const t4  = '#97958C';
-const tAcc = '#00D49A';
+const t4  = '#B0AEA6';
+const tAcc = '#00D6A0';
 
 // ─── Reusable section block ───────────────────────────────────────────────────
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
@@ -27,7 +27,7 @@ function Nav() {
     <nav className="fixed top-0 inset-x-0 z-50 flex items-center justify-between px-8 py-5"
       style={{
         background: 'rgba(31,31,30,0.92)',
-        borderBottom: '1px solid rgba(255,255,255,0.07)',
+        borderBottom: '1px solid rgba(195,194,183,0.10)',
         backdropFilter: 'blur(20px)',
         WebkitBackdropFilter: 'blur(20px)',
       }}>
@@ -45,7 +45,7 @@ function Nav() {
 // ─── Footer ───────────────────────────────────────────────────────────────────
 function Footer() {
   return (
-    <footer className="py-12 px-6 border-t" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
+    <footer className="py-12 px-6 border-t" style={{ borderColor: 'rgba(195,194,183,0.10)' }}>
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5">
         <div className="flex items-center gap-2.5">
           <Image src="/icon.png" alt={APP_NAME} width={24} height={24} className="rounded-md opacity-60" />
