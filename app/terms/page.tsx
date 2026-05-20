@@ -24,8 +24,13 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 // ─── Nav ──────────────────────────────────────────────────────────────────────
 function Nav() {
   return (
-    <nav className="flex items-center justify-between px-8 py-5 border-b"
-      style={{ borderColor: 'rgba(255,255,255,0.07)' }}>
+    <nav className="fixed top-0 inset-x-0 z-50 flex items-center justify-between px-8 py-5"
+      style={{
+        background: 'rgba(13,13,13,0.85)',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        backdropFilter: 'blur(20px)',
+        WebkitBackdropFilter: 'blur(20px)',
+      }}>
       <Link href="/" className="flex items-center gap-3">
         <Image src="/icon.png" alt={APP_NAME} width={32} height={32} className="rounded-[10px]" />
         <span style={{ fontSize: 18, fontWeight: 800, color: t1 }}>{APP_NAME}</span>
@@ -70,7 +75,7 @@ export default function TermsPage() {
     <main style={{ background: '#0D0D0D', minHeight: '100vh', fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
       <Nav />
 
-      <div className="max-w-2xl mx-auto px-6 py-20">
+      <div className="max-w-2xl mx-auto px-6" style={{ paddingTop: 120, paddingBottom: 80 }}>
         <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '3px', textTransform: 'uppercase', color: t3, marginBottom: 16 }}>
           LEGAL
         </p>
