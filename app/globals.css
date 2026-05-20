@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg:             #0D0D0D;
-  --color-card:           #161616;
-  --color-card-elevated:  #1C1C1C;
+  --color-bg:             #1F1F1E;
+  --color-card:           #272726;
+  --color-card-elevated:  #313130;
   --color-accent:         #00D49A;
   --color-danger:         #FF5959;
   --color-text-primary:   #F2F2F2;
-  --color-text-2:         #888888;
-  --color-text-3:         #4A4A4A;
+  --color-text-2:         #B0B0B0;
+  --color-text-3:         #777777;
   --font-jakarta:         'Plus Jakarta Sans', sans-serif;
   --font-sans:            var(--font-jakarta);
 }
@@ -23,7 +23,7 @@
 * { box-sizing: border-box; }
 
 body {
-  background-color: #0D0D0D;
+  background-color: #1F1F1E;
   color: #F2F2F2;
   font-family: 'Plus Jakarta Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -36,14 +36,14 @@ body {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(0, 212, 154, 0.09) 0%, transparent 65%);
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(0, 212, 154, 0.11) 0%, transparent 65%);
   pointer-events: none;
 }
 
 .dot-grid {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);
   background-size: 28px 28px;
   mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 80%);
   -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 80%);
@@ -60,7 +60,7 @@ body {
   position: absolute;
   top: 0; left: 10%; right: 10%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.10), transparent);
 }
 
 .card-hi-accent::before {
@@ -85,9 +85,6 @@ body {
 }
 
 /* ── Animated glow border on CTA ─────────────────────────────── */
-@keyframes border-spin {
-  to { --angle: 360deg; }
-}
 @property --angle {
   syntax: '<angle>';
   initial-value: 0deg;
@@ -97,17 +94,17 @@ body {
   box-shadow:
     0 0 0 1px rgba(0,212,154,0.18),
     0 24px 64px rgba(0,212,154,0.08),
-    0 48px 80px rgba(0,0,0,0.4);
+    0 48px 80px rgba(0,0,0,0.3);
 }
 
 /* ── Phone glow ──────────────────────────────────────────────── */
 .phone-glow {
-  filter: drop-shadow(0 32px 48px rgba(0,212,154,0.13)) drop-shadow(0 8px 16px rgba(0,0,0,0.5));
+  filter: drop-shadow(0 32px 48px rgba(0,212,154,0.13)) drop-shadow(0 8px 16px rgba(0,0,0,0.4));
 }
 
 /* ── Stat card ───────────────────────────────────────────────── */
 .stat-card {
-  background: #161616;
+  background: #272726;
   border: 1px solid rgba(255,255,255,0.07);
   border-radius: 20px;
   padding: 20px 28px;
@@ -125,12 +122,7 @@ body {
   background: linear-gradient(90deg, transparent, rgba(0,212,154,0.25), transparent);
 }
 
-/* ── India strip ─────────────────────────────────────────────── */
-.india-strip {
-  background: linear-gradient(90deg, #FF9933 0%, #FF9933 33.3%, #fff 33.3%, #fff 66.6%, #138808 66.6%, #138808 100%);
-}
-
-/* ── Scroll fade-in (lightweight, no JS) ────────────────────── */
+/* ── Scroll fade-in ──────────────────────────────────────────── */
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }

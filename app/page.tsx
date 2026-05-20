@@ -11,7 +11,7 @@ const t4  = '#555555';   // nav links, footer  (was #3a3a3a)
 const tAcc = '#00D49A';  // accent green
 
 // Card background
-const cardBg = '#161616';
+const cardBg = '#272726';
 const cardBorder = 'rgba(255,255,255,0.07)';
 
 // Section label style (the UPPERCASE eyebrow above headings)
@@ -170,7 +170,7 @@ function PhoneMockup() {
             </div>
           </div>
           <div className="mx-3.5 mt-2.5 rounded-[18px] p-3.5 relative overflow-hidden"
-            style={{ background: 'linear-gradient(135deg, #1a1a1a 0%, #161616 100%)', border: '1px solid rgba(255,255,255,0.08)' }}>
+            style={{ background: 'linear-gradient(135deg, #2e2e2d 0%, #272726 100%)', border: '1px solid rgba(255,255,255,0.08)' }}>
             <div className="absolute top-0 left-6 right-6 h-px"
               style={{ background: 'linear-gradient(90deg, transparent, rgba(0,212,154,0.3), transparent)' }} />
             <p className="text-[8px] font-bold tracking-[2px] uppercase" style={{ color: '#4A4A4A' }}>NET BALANCE</p>
@@ -214,7 +214,7 @@ function PhoneMockup() {
               <div key={e.label} className="flex items-center justify-between py-1.5">
                 <div className="flex items-center gap-2">
                   <div className="w-7 h-7 rounded-xl flex items-center justify-center"
-                    style={{ background: '#1C1C1C', fontSize: 14 }}>{e.emoji}</div>
+                    style={{ background: '#313130', fontSize: 14 }}>{e.emoji}</div>
                   <div>
                     <p className="text-[10px] font-semibold leading-none mb-0.5" style={{ color: '#E0E0E0' }}>{e.label}</p>
                     <p className="text-[7.5px] leading-none" style={{ color: '#3a3a3a' }}>{e.sub}</p>
@@ -250,8 +250,8 @@ function Nav() {
   return (
     <nav className="fixed top-0 inset-x-0 z-50 flex items-center justify-between px-8 py-5"
       style={{
-        background: 'rgba(13,13,13,0.85)',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        background: 'rgba(31,31,30,0.92)',
+        borderBottom: '1px solid rgba(255,255,255,0.07)',
         backdropFilter: 'blur(20px)',
         WebkitBackdropFilter: 'blur(20px)',
       }}>
@@ -800,7 +800,7 @@ function MadeInIndia() {
             ].map(item => (
               <div key={item.label} className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-xl flex items-center justify-center"
-                  style={{ background: '#1C1C1C', fontSize: 18 }}>{item.icon}</div>
+                  style={{ background: '#313130', fontSize: 18 }}>{item.icon}</div>
                 <span style={{ fontSize: 15, fontWeight: 600, color: '#C0C0C0' }}>{item.label}</span>
               </div>
             ))}
@@ -839,7 +839,7 @@ function Footer() {
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5">
         <div className="flex items-center gap-2.5">
           <Image src="/icon.png" alt={APP_NAME} width={24} height={24} className="rounded-md opacity-60" />
-          <span style={{ fontSize: 14, fontWeight: 700, color: t4 }}>{APP_NAME}</span>
+          <span style={{ fontSize: 15, fontWeight: 700, color: t4 }}>{APP_NAME}</span>
         </div>
         <div className="flex items-center gap-8">
           {[
@@ -847,11 +847,11 @@ function Footer() {
             { href: '/terms',   label: 'Terms',          internal: true },
             { href: 'mailto:hello@splitnow.in', label: 'Contact', internal: false },
           ].map(l => l.internal
-            ? <Link key={l.label} href={l.href} className="transition-colors hover:text-white" style={{ fontSize: 14, color: t4 }}>{l.label}</Link>
-            : <a key={l.label} href={l.href} className="transition-colors hover:text-white" style={{ fontSize: 14, color: t4 }}>{l.label}</a>
+            ? <Link key={l.label} href={l.href} className="transition-colors hover:text-white" style={{ fontSize: 15, color: t4 }}>{l.label}</Link>
+            : <a key={l.label} href={l.href} className="transition-colors hover:text-white" style={{ fontSize: 15, color: t4 }}>{l.label}</a>
           )}
         </div>
-        <p style={{ fontSize: 13, color: '#444' }}>
+        <p style={{ fontSize: 14, color: '#666' }}>
           © {new Date().getFullYear()} {APP_NAME}. Made in India 🇮🇳
         </p>
       </div>
@@ -863,7 +863,7 @@ function Footer() {
 
 export default function Home() {
   return (
-    <main style={{ background: '#0D0D0D', minHeight: '100vh' }}>
+    <main style={{ background: '#1F1F1E', minHeight: '100vh' }}>
       <Nav />
       <Hero />
       <Stats />

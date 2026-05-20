@@ -26,8 +26,8 @@ function Nav() {
   return (
     <nav className="fixed top-0 inset-x-0 z-50 flex items-center justify-between px-8 py-5"
       style={{
-        background: 'rgba(13,13,13,0.85)',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        background: 'rgba(31,31,30,0.92)',
+        borderBottom: '1px solid rgba(255,255,255,0.07)',
         backdropFilter: 'blur(20px)',
         WebkitBackdropFilter: 'blur(20px)',
       }}>
@@ -49,7 +49,7 @@ function Footer() {
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5">
         <div className="flex items-center gap-2.5">
           <Image src="/icon.png" alt={APP_NAME} width={24} height={24} className="rounded-md opacity-60" />
-          <span style={{ fontSize: 14, fontWeight: 700, color: t4 }}>{APP_NAME}</span>
+          <span style={{ fontSize: 15, fontWeight: 700, color: t4 }}>{APP_NAME}</span>
         </div>
         <div className="flex items-center gap-8">
           {[
@@ -57,11 +57,11 @@ function Footer() {
             { href: '/privacy', label: 'Privacy', internal: true },
             { href: `mailto:${CONTACT_EMAIL}`, label: 'Contact', internal: false },
           ].map(l => l.internal
-            ? <Link key={l.label} href={l.href} className="transition-colors hover:text-white" style={{ fontSize: 14, color: t4 }}>{l.label}</Link>
-            : <a   key={l.label} href={l.href} className="transition-colors hover:text-white" style={{ fontSize: 14, color: t4 }}>{l.label}</a>
+            ? <Link key={l.label} href={l.href} className="transition-colors hover:text-white" style={{ fontSize: 15, color: t4 }}>{l.label}</Link>
+            : <a   key={l.label} href={l.href} className="transition-colors hover:text-white" style={{ fontSize: 15, color: t4 }}>{l.label}</a>
           )}
         </div>
-        <p style={{ fontSize: 13, color: '#444' }}>
+        <p style={{ fontSize: 14, color: '#666' }}>
           © {new Date().getFullYear()} {APP_NAME}. Made in India 🇮🇳
         </p>
       </div>
@@ -72,7 +72,7 @@ function Footer() {
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default function TermsPage() {
   return (
-    <main style={{ background: '#0D0D0D', minHeight: '100vh', fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+    <main style={{ background: '#1F1F1E', minHeight: '100vh', fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
       <Nav />
 
       <div className="max-w-2xl mx-auto px-6" style={{ paddingTop: 120, paddingBottom: 80 }}>
