@@ -3,10 +3,10 @@ import Image from 'next/image';
 import { APP_NAME, CONTACT_EMAIL } from '@/lib/config';
 
 // ─── Shared tokens (mirror page.tsx) ─────────────────────────────────────────
-const t1  = '#F2F2F2';
-const t2  = '#B0B0B0';
-const t3  = '#777777';
-const t4  = '#555555';
+const t1  = '#F8F8F6';
+const t2  = '#C3C2B7';
+const t3  = '#97958C';
+const t4  = '#97958C';
 const tAcc = '#00D49A';
 
 // ─── Reusable section block ───────────────────────────────────────────────────
@@ -61,7 +61,7 @@ function Footer() {
             : <a   key={l.label} href={l.href} className="transition-colors hover:text-white" style={{ fontSize: 15, color: t4 }}>{l.label}</a>
           )}
         </div>
-        <p style={{ fontSize: 14, color: '#666' }}>
+        <p style={{ fontSize: 14, color: t3 }}>
           © {new Date().getFullYear()} {APP_NAME}. Made in India 🇮🇳
         </p>
       </div>

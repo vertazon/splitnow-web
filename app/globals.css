@@ -6,9 +6,9 @@
   --color-card-elevated:  #313130;
   --color-accent:         #00D49A;
   --color-danger:         #FF5959;
-  --color-text-primary:   #F2F2F2;
-  --color-text-2:         #B0B0B0;
-  --color-text-3:         #777777;
+  --color-text-primary:   #F8F8F6;
+  --color-text-2:         #C3C2B7;
+  --color-text-3:         #97958C;
   --font-jakarta:         'Plus Jakarta Sans', sans-serif;
   --font-sans:            var(--font-jakarta);
 }
@@ -24,7 +24,7 @@
 
 body {
   background-color: #1F1F1E;
-  color: #F2F2F2;
+  color: #F8F8F6;
   font-family: 'Plus Jakarta Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -3,11 +3,10 @@ import Link from 'next/link';
 import { APP_NAME, APP_TAGLINE, APP_DESCRIPTION } from '@/lib/config';
 
 // ─── Shared style tokens ──────────────────────────────────────────────────────
-// Text colors (lighter than before for eye comfort)
-const t1  = '#F2F2F2';   // headings, primary
-const t2  = '#B0B0B0';   // card body text  (was #555 — much more readable)
-const t3  = '#777777';   // secondary labels, sub-text  (was #3a3a3a)
-const t4  = '#555555';   // nav links, footer  (was #3a3a3a)
+const t1  = '#F8F8F6';   // headings, primary
+const t2  = '#C3C2B7';   // card body copy, descriptions
+const t3  = '#97958C';   // labels, nav links, footer, sub-text
+const t4  = '#97958C';   // same warm gray — footer links, nav links
 const tAcc = '#00D49A';  // accent green
 
 // Card background
@@ -58,7 +57,7 @@ function DownloadBadges() {
           </div>
         </div>
       </div>
-      <p className="text-sm" style={{ color: t3 }}>Coming soon · Stay tuned</p>
+      <p className="text-sm" style={{ color: t4 }}>Coming soon · Stay tuned</p>
     </div>
   );
 }
@@ -310,7 +309,7 @@ function Hero() {
       </h1>
 
       <p className="max-w-lg mb-10 leading-relaxed"
-        style={{ fontSize: 18, color: '#999', position: 'relative', zIndex: 1 }}>
+        style={{ fontSize: 18, color: t2, position: 'relative', zIndex: 1 }}>
         {APP_DESCRIPTION}
       </p>
 
@@ -318,7 +317,7 @@ function Hero() {
       <div className="flex flex-wrap justify-center gap-2 mb-10" style={{ position: 'relative', zIndex: 1 }}>
         {['2-tap logging', 'Real-time balances', 'Personal + shared', 'No bank linkage', 'Free to use'].map(tag => (
           <span key={tag} className="font-semibold px-4 py-2 rounded-full border"
-            style={{ fontSize: 13, background: 'rgba(255,255,255,0.03)', borderColor: 'rgba(255,255,255,0.09)', color: '#666' }}>
+            style={{ fontSize: 13, background: 'rgba(255,255,255,0.03)', borderColor: 'rgba(255,255,255,0.09)', color: t3 }}>
             {tag}
           </span>
         ))}
@@ -694,7 +693,7 @@ function Testimonials() {
                 </svg>
               ))}
             </div>
-            <p style={{ fontSize: 15, lineHeight: 1.7, color: '#AAAAAA', marginBottom: 24, flex: 1 }}>&ldquo;{t.quote}&rdquo;</p>
+            <p style={{ fontSize: 15, lineHeight: 1.7, color: t2, marginBottom: 24, flex: 1 }}>&ldquo;{t.quote}&rdquo;</p>
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full flex items-center justify-center font-bold shrink-0"
                 style={{ background: t.colorDim, color: t.color, fontSize: 12 }}>
@@ -801,7 +800,7 @@ function MadeInIndia() {
               <div key={item.label} className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-xl flex items-center justify-center"
                   style={{ background: '#313130', fontSize: 18 }}>{item.icon}</div>
-                <span style={{ fontSize: 15, fontWeight: 600, color: '#C0C0C0' }}>{item.label}</span>
+                <span style={{ fontSize: 15, fontWeight: 600, color: t2 }}>{item.label}</span>
               </div>
             ))}
           </div>
@@ -851,7 +850,7 @@ function Footer() {
             : <a key={l.label} href={l.href} className="transition-colors hover:text-white" style={{ fontSize: 15, color: t4 }}>{l.label}</a>
           )}
         </div>
-        <p style={{ fontSize: 14, color: '#666' }}>
+        <p style={{ fontSize: 14, color: t3 }}>
           © {new Date().getFullYear()} {APP_NAME}. Made in India 🇮🇳
         </p>
       </div>
