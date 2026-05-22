@@ -68,46 +68,46 @@ function DownloadBadges() {
 // ─── Tab SVG icons ────────────────────────────────────────────────────────────
 
 function IconHome({ active }: { active: boolean }) {
-  const c = active ? tAcc : '#4A4A4A';
+  const c = active ? tAcc : '#484848';
   return (
-    <svg width="13" height="13" viewBox="0 0 24 24" fill={c}>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill={c}>
       <path d="M3 12L12 3L21 12V20C21 20.55 20.55 21 20 21H15V15H9V21H4C3.45 21 3 20.55 3 20V12Z" />
     </svg>
   );
 }
 function IconGroups({ active }: { active: boolean }) {
-  const c = active ? tAcc : '#4A4A4A';
+  const c = active ? tAcc : '#484848';
   return (
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
-      <circle cx="9" cy="7" r="3" fill={c} opacity="0.7" />
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+      <circle cx="9" cy="7" r="3" fill={c} opacity="0.65" />
       <circle cx="15" cy="7" r="3" fill={c} />
       <path d="M3 19C3 15.69 5.69 13 9 13H15C18.31 13 21 15.69 21 19" stroke={c} strokeWidth="2" strokeLinecap="round" />
     </svg>
   );
 }
 function IconAdd({ active }: { active: boolean }) {
-  const c = active ? tAcc : '#4A4A4A';
+  const c = active ? tAcc : '#484848';
   return (
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
       <circle cx="12" cy="12" r="9" stroke={c} strokeWidth="2" />
       <path d="M12 8V16M8 12H16" stroke={c} strokeWidth="2" strokeLinecap="round" />
     </svg>
   );
 }
 function IconInsights({ active }: { active: boolean }) {
-  const c = active ? tAcc : '#4A4A4A';
+  const c = active ? tAcc : '#484848';
   return (
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
-      <rect x="3" y="12" width="4" height="9" rx="1" fill={c} opacity="0.45" />
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+      <rect x="3" y="12" width="4" height="9" rx="1" fill={c} opacity="0.4" />
       <rect x="10" y="7" width="4" height="14" rx="1" fill={c} opacity="0.7" />
       <rect x="17" y="3" width="4" height="18" rx="1" fill={c} />
     </svg>
   );
 }
 function IconFriends({ active }: { active: boolean }) {
-  const c = active ? tAcc : '#4A4A4A';
+  const c = active ? tAcc : '#484848';
   return (
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
       <circle cx="10" cy="7" r="3" fill={c} />
       <path d="M4 19C4 15.69 6.69 13 10 13C11.55 13 12.96 13.6 14.03 14.57" stroke={c} strokeWidth="2" strokeLinecap="round" />
       <path d="M18 14V20M15 17H21" stroke={c} strokeWidth="2" strokeLinecap="round" />
@@ -127,116 +127,146 @@ function PhoneMockup() {
   ];
 
   return (
-    <div className="phone-glow relative mx-auto" style={{ width: 264, height: 548 }}>
+    <div className="phone-glow relative mx-auto" style={{ width: 296, height: 632 }}>
+      {/* Phone shell — visible frame with depth */}
       <div
         className="absolute inset-0 rounded-[46px] border-[7px]"
         style={{
-          borderColor: '#222',
-          background: 'linear-gradient(160deg, #2a2a2a 0%, #1a1a1a 100%)',
-          boxShadow: 'inset 0 0 0 1px rgba(255,255,255,0.08)',
+          borderColor: '#313130',
+          background: 'linear-gradient(145deg, #3a3a39 0%, #1e1e1d 55%, #2a2a29 100%)',
+          boxShadow:
+            'inset 0 1px 0 rgba(255,255,255,0.16), inset -1px 0 0 rgba(0,0,0,0.4), 0 24px 60px rgba(0,0,0,0.8)',
         }}
       >
-        <div className="absolute top-3 left-1/2 -translate-x-1/2 rounded-full flex items-center justify-center gap-1.5"
-          style={{ width: 84, height: 24, background: '#000' }}>
-          <div className="w-2 h-2 rounded-full" style={{ background: '#1a1a1a', border: '1px solid #333' }} />
-          <div className="w-1 h-1 rounded-full" style={{ background: '#222' }} />
-        </div>
-        <div className="absolute inset-[2px] rounded-[40px] overflow-hidden" style={{ background: '#0D0D0D' }}>
-          <div className="flex justify-between items-center px-5 pt-8 pb-1.5">
-            <span className="text-[11px] font-bold" style={{ color: t1 }}>9:41</span>
-            <div className="flex items-center gap-1.5">
-              {[3, 4.5, 6, 7.5].map(h => (
-                <div key={h} style={{ width: 3, height: h, background: h > 5 ? t1 : 'rgba(255,255,255,0.4)', borderRadius: 1 }} />
-              ))}
-              <svg width="13" height="10" viewBox="0 0 16 12" fill="none" style={{ marginLeft: 2 }}>
-                <path d="M8 10L8 10.01" stroke={t1} strokeWidth="2.5" strokeLinecap="round" />
-                <path d="M5.5 7.5C6.33 6.67 7.17 6.5 8 6.5C8.83 6.5 9.67 6.67 10.5 7.5" stroke={t1} strokeWidth="1.5" strokeLinecap="round" fill="none" />
-                <path d="M2.5 5C4.17 3.33 6 2.5 8 2.5C10 2.5 11.83 3.33 13.5 5" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+        {/* Side button (right) */}
+        <div className="absolute rounded-r-sm"
+          style={{ top: 110, right: -10, width: 4, height: 48, background: '#2a2a29', boxShadow: 'inset -1px 0 0 rgba(255,255,255,0.08)' }} />
+        {/* Volume buttons (left) */}
+        <div className="absolute rounded-l-sm"
+          style={{ top: 84, left: -10, width: 4, height: 32, background: '#2a2a29' }} />
+        <div className="absolute rounded-l-sm"
+          style={{ top: 124, left: -10, width: 4, height: 32, background: '#2a2a29' }} />
+
+        {/* Dynamic island */}
+        <div
+          className="absolute left-1/2 -translate-x-1/2 rounded-full"
+          style={{ top: 11, width: 88, height: 28, background: '#000', boxShadow: 'inset 0 1px 3px rgba(0,0,0,0.8)' }}
+        />
+
+        {/* Screen — text-left resets the hero section's text-center */}
+        <div
+          className="absolute rounded-[40px] overflow-hidden"
+          style={{ inset: 2, background: '#0D0D0D', textAlign: 'left' }}
+        >
+          {/* ── Status bar ── */}
+          <div className="flex justify-between items-center px-5" style={{ paddingTop: 16, paddingBottom: 4 }}>
+            <span style={{ fontSize: 12.5, fontWeight: 700, color: t1, letterSpacing: '-0.2px' }}>9:41</span>
+            <div className="flex items-center gap-[7px]">
+              {/* Signal bars — ascending, items-end aligned */}
+              <div style={{ display: 'flex', alignItems: 'flex-end', gap: 2 }}>
+                {[{ h: 4 }, { h: 6.5 }, { h: 9 }, { h: 12 }].map(({ h }, i) => (
+                  <div key={i} style={{ width: 3.5, height: h, borderRadius: 1, background: i < 3 ? t1 : 'rgba(255,255,255,0.2)' }} />
+                ))}
+              </div>
+              {/* WiFi */}
+              <svg width="15" height="11" viewBox="0 0 18 13" fill="none">
+                <circle cx="9" cy="12" r="1.4" fill={t1} />
+                <path d="M5.5 8.5C6.5 7.5 7.7 7 9 7s2.5.5 3.5 1.5" stroke={t1} strokeWidth="1.7" strokeLinecap="round" />
+                <path d="M2.2 5.5C4.2 3.5 6.4 2.5 9 2.5s4.8 1 6.8 3" stroke="rgba(255,255,255,0.32)" strokeWidth="1.7" strokeLinecap="round" />
               </svg>
-              <div className="flex items-center gap-0.5 ml-1">
-                <div style={{ width: 19, height: 10, borderRadius: 3, border: '1.5px solid rgba(255,255,255,0.5)', padding: '1.5px 2px' }}>
-                  <div style={{ width: '70%', height: '100%', borderRadius: 1.5, background: tAcc }} />
+              {/* Battery */}
+              <div style={{ display: 'flex', alignItems: 'center' }}>
+                <div style={{ width: 22, height: 11, borderRadius: 3, border: '1.5px solid rgba(255,255,255,0.45)', padding: '1.5px 2px', display: 'flex', alignItems: 'center' }}>
+                  <div style={{ width: '72%', height: '100%', borderRadius: 1.5, background: tAcc }} />
                 </div>
-                <div style={{ width: 2, height: 5, background: 'rgba(255,255,255,0.35)', borderRadius: 1 }} />
+                <div style={{ width: 2, height: 5, borderRadius: 1, background: 'rgba(255,255,255,0.35)', marginLeft: 1.5 }} />
               </div>
             </div>
           </div>
-          <div className="px-4 mt-1.5 flex justify-between items-center">
+
+          {/* ── Greeting + Avatar ── */}
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 16px 0' }}>
             <div>
-              <p className="text-[9px] font-semibold tracking-[2px] uppercase" style={{ color: '#3a3a3a' }}>MAY 2026</p>
-              <p className="text-[15px] font-extrabold mt-0.5" style={{ color: t1 }}>Hey Aryan 👋</p>
+              <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '2.5px', color: '#3a3a3a', textTransform: 'uppercase' }}>MAY 2026</p>
+              <p style={{ fontSize: 18, fontWeight: 800, color: t1, marginTop: 3, letterSpacing: '-0.4px' }}>Hey Aryan 👋</p>
             </div>
-            <div className="w-8 h-8 rounded-full flex items-center justify-center text-[10px] font-bold"
-              style={{ background: 'rgba(0,212,154,0.15)', color: tAcc, border: '1.5px solid rgba(0,212,154,0.25)' }}>
+            <div style={{ width: 36, height: 36, borderRadius: 18, background: 'rgba(0,212,154,0.15)', border: '1.5px solid rgba(0,212,154,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11.5, fontWeight: 800, color: tAcc, flexShrink: 0 }}>
               AR
             </div>
           </div>
-          <div className="mx-3.5 mt-2.5 rounded-[18px] p-3.5 relative overflow-hidden"
-            style={{ background: 'linear-gradient(135deg, #2e2e2d 0%, #272726 100%)', border: '1px solid rgba(255,255,255,0.08)' }}>
-            <div className="absolute top-0 left-6 right-6 h-px"
-              style={{ background: 'linear-gradient(90deg, transparent, rgba(0,212,154,0.3), transparent)' }} />
-            <p className="text-[8px] font-bold tracking-[2px] uppercase" style={{ color: '#4A4A4A' }}>NET BALANCE</p>
-            <p className="text-[28px] font-extrabold leading-tight mt-0.5" style={{ color: tAcc, letterSpacing: '-1.5px' }}>+₹1,200</p>
-            <div className="flex justify-between items-center mt-1">
-              <p className="text-[9px]" style={{ color: '#555' }}>from 2 people</p>
-              <span className="text-[7.5px] font-bold px-2 py-0.5 rounded-full"
-                style={{ background: 'rgba(0,212,154,0.12)', color: tAcc }}>All settled ✓</span>
-            </div>
-          </div>
-          <div className="mx-3.5 mt-3">
-            <div className="flex justify-between items-center mb-1.5">
-              <p className="text-[8px] font-bold tracking-[2px] uppercase" style={{ color: '#3a3a3a' }}>BALANCES</p>
-              <p className="text-[8px] font-semibold" style={{ color: tAcc }}>See all →</p>
-            </div>
-            {[
-              { initials: 'RJ', name: 'Raj',   amount: '+₹640', color: tAcc,     bg: 'rgba(0,212,154,0.12)',   tc: tAcc },
-              { initials: 'PR', name: 'Priya', amount: '+₹560', color: '#5B9FFF', bg: 'rgba(91,159,255,0.12)', tc: '#5B9FFF' },
-            ].map(b => (
-              <div key={b.name} className="flex items-center justify-between py-1.5"
-                style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
-                <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 rounded-full flex items-center justify-center text-[8px] font-bold"
-                    style={{ background: b.bg, color: b.tc }}>{b.initials}</div>
-                  <span className="text-[10.5px] font-semibold" style={{ color: '#E0E0E0' }}>{b.name}</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <span className="text-[10px] font-bold" style={{ color: b.color }}>{b.amount}</span>
-                  <span className="text-[7px] font-bold px-1.5 py-0.5 rounded-full"
-                    style={{ background: 'rgba(0,212,154,0.10)', color: tAcc }}>Settle</span>
-                </div>
+
+          {/* ── Balance card ── */}
+          <div style={{ margin: '12px 14px 0', borderRadius: 18, padding: '14px 16px 13px', background: 'linear-gradient(140deg, #222221 0%, #1b1b1a 100%)', border: '1px solid rgba(255,255,255,0.09)', position: 'relative', overflow: 'hidden' }}>
+            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 1, background: 'linear-gradient(90deg, transparent 5%, rgba(0,212,154,0.45) 50%, transparent 95%)' }} />
+            <p style={{ fontSize: 8.5, fontWeight: 700, letterSpacing: '2.5px', color: '#484848', textTransform: 'uppercase' }}>NET BALANCE</p>
+            <p style={{ fontSize: 34, fontWeight: 800, color: tAcc, letterSpacing: '-2px', lineHeight: 1.05, marginTop: 5 }}>+₹1,200</p>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 9 }}>
+              <p style={{ fontSize: 10, color: '#545454' }}>from 2 people</p>
+              <div style={{ background: 'rgba(0,212,154,0.12)', border: '1px solid rgba(0,212,154,0.2)', borderRadius: 20, padding: '4px 10px', display: 'inline-flex', alignItems: 'center' }}>
+                <span style={{ fontSize: 8.5, fontWeight: 700, color: tAcc }}>All settled ✓</span>
               </div>
-            ))}
+            </div>
           </div>
-          <div className="mx-3.5 mt-3">
-            <p className="text-[8px] font-bold tracking-[2px] uppercase mb-1.5" style={{ color: '#3a3a3a' }}>RECENT</p>
+
+          {/* ── Balances section ── */}
+          <div style={{ margin: '14px 14px 0' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
+              <p style={{ fontSize: 8.5, fontWeight: 700, letterSpacing: '2.5px', color: '#383838', textTransform: 'uppercase' }}>BALANCES</p>
+              <p style={{ fontSize: 9.5, fontWeight: 600, color: tAcc }}>See all →</p>
+            </div>
             {[
-              { emoji: '🍛', label: 'Food',       sub: 'Yesterday · Raj, Priya', amount: '₹420', tag: 'shared',   tagColor: '#888' },
-              { emoji: '☕', label: 'Chai/Coffee', sub: 'Today',                  amount: '₹80',  tag: 'personal', tagColor: '#4A4A4A' },
-            ].map(e => (
-              <div key={e.label} className="flex items-center justify-between py-1.5">
-                <div className="flex items-center gap-2">
-                  <div className="w-7 h-7 rounded-xl flex items-center justify-center"
-                    style={{ background: '#313130', fontSize: 14 }}>{e.emoji}</div>
-                  <div>
-                    <p className="text-[10px] font-semibold leading-none mb-0.5" style={{ color: '#E0E0E0' }}>{e.label}</p>
-                    <p className="text-[7.5px] leading-none" style={{ color: '#3a3a3a' }}>{e.sub}</p>
+              { initials: 'RJ', name: 'Raj',   amount: '+₹640', c: tAcc,      bg: 'rgba(0,212,154,0.14)' },
+              { initials: 'PR', name: 'Priya', amount: '+₹560', c: '#5B9FFF', bg: 'rgba(91,159,255,0.14)' },
+            ].map((b, i) => (
+              <div key={b.name} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: 8, paddingBottom: 8, borderBottom: i === 0 ? '1px solid rgba(255,255,255,0.05)' : 'none' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <div style={{ width: 30, height: 30, borderRadius: 15, background: b.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 10, fontWeight: 700, color: b.c, flexShrink: 0 }}>
+                    {b.initials}
+                  </div>
+                  <span style={{ fontSize: 13, fontWeight: 600, color: '#E8E8E6' }}>{b.name}</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 9 }}>
+                  <span style={{ fontSize: 12, fontWeight: 700, color: b.c }}>{b.amount}</span>
+                  <div style={{ background: 'rgba(0,212,154,0.09)', border: '1px solid rgba(0,212,154,0.22)', borderRadius: 20, padding: '4px 10px', display: 'inline-flex', alignItems: 'center' }}>
+                    <span style={{ fontSize: 9, fontWeight: 700, color: tAcc }}>Settle</span>
                   </div>
                 </div>
-                <div className="text-right">
-                  <p className="text-[10px] font-bold leading-none mb-0.5" style={{ color: '#E0E0E0' }}>{e.amount}</p>
-                  <p className="text-[7.5px]" style={{ color: e.tagColor }}>{e.tag}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* ── Recent section ── */}
+          <div style={{ margin: '14px 14px 0' }}>
+            <p style={{ fontSize: 8.5, fontWeight: 700, letterSpacing: '2.5px', color: '#383838', textTransform: 'uppercase', marginBottom: 8 }}>RECENT</p>
+            {[
+              { emoji: '🍛', label: 'Food',       sub: 'Yesterday · Raj, Priya', amount: '₹420', tag: 'shared',   tc: '#606060' },
+              { emoji: '☕', label: 'Chai/Coffee', sub: 'Today',                  amount: '₹80',  tag: 'personal', tc: '#484848' },
+            ].map((e) => (
+              <div key={e.label} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: 8, paddingBottom: 8 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <div style={{ width: 34, height: 34, borderRadius: 11, background: '#1e1e1d', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 17, flexShrink: 0 }}>
+                    {e.emoji}
+                  </div>
+                  <div style={{ textAlign: 'left' }}>
+                    <p style={{ fontSize: 12, fontWeight: 600, color: '#E5E5E3', lineHeight: 1.3 }}>{e.label}</p>
+                    <p style={{ fontSize: 9.5, color: '#454545', lineHeight: 1.3, marginTop: 1 }}>{e.sub}</p>
+                  </div>
+                </div>
+                <div style={{ textAlign: 'right' }}>
+                  <p style={{ fontSize: 12, fontWeight: 700, color: '#D0D0CE', lineHeight: 1.3 }}>{e.amount}</p>
+                  <p style={{ fontSize: 9.5, color: e.tc, lineHeight: 1.3, marginTop: 1 }}>{e.tag}</p>
                 </div>
               </div>
             ))}
           </div>
-          <div className="absolute bottom-0 inset-x-0 flex justify-around items-center pt-2 pb-3 border-t"
-            style={{ background: 'rgba(9,9,9,0.98)', borderColor: 'rgba(255,255,255,0.06)' }}>
+
+          {/* ── Tab bar ── */}
+          <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, display: 'flex', justifyContent: 'space-around', alignItems: 'center', paddingTop: 10, paddingBottom: 18, background: 'rgba(9,9,9,0.98)', borderTop: '1px solid rgba(255,255,255,0.07)' }}>
             {tabs.map(({ label, Icon, active }) => (
-              <div key={label} className="flex flex-col items-center gap-1">
+              <div key={label} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
                 <Icon active={active} />
-                <span className="text-[6px] font-bold tracking-wider"
-                  style={{ color: active ? tAcc : '#3a3a3a' }}>{label}</span>
-                {active && <div className="w-1 h-0.5 rounded-full" style={{ background: tAcc }} />}
+                <span style={{ fontSize: 7.5, fontWeight: 700, letterSpacing: '0.4px', color: active ? tAcc : '#3a3a3a' }}>{label}</span>
+                {active && <div style={{ width: 4, height: 2.5, borderRadius: 2, background: tAcc }} />}
               </div>
             ))}
           </div>
