@@ -1,6 +1,12 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
 import { APP_NAME, CONTACT_EMAIL } from '@/lib/config';
+import { LogoLink } from '@/components/LogoLink';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy',
+  description: `How ${APP_NAME} collects, uses, and protects your personal data.`,
+};
 
 // ─── Shared tokens (mirror page.tsx) ─────────────────────────────────────────
 const t1  = '#F8F8F6';
@@ -31,11 +37,8 @@ function Nav() {
         backdropFilter: 'blur(20px)',
         WebkitBackdropFilter: 'blur(20px)',
       }}>
-      <Link href="/" className="flex items-center gap-3">
-        <Image src="/icon.png" alt={APP_NAME} width={32} height={32} className="rounded-[10px]" />
-        <span style={{ fontSize: 18, fontWeight: 800, color: t1 }}>{APP_NAME}</span>
-      </Link>
-      <Link href="/" style={{ fontSize: 15, color: t4 }} className="hover:text-white transition-colors">
+      <LogoLink imgSize={32} fontSize={18} />
+      <Link href="/" style={{ fontSize: 15, color: t1 }} className="link-underline">
         ← Back
       </Link>
     </nav>
@@ -47,21 +50,18 @@ function Footer() {
   return (
     <footer className="py-12 px-6 border-t" style={{ borderColor: 'rgba(195,194,183,0.10)' }}>
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5">
-        <div className="flex items-center gap-2.5">
-          <Image src="/icon.png" alt={APP_NAME} width={24} height={24} className="rounded-md opacity-60" />
-          <span style={{ fontSize: 15, fontWeight: 700, color: t4 }}>{APP_NAME}</span>
-        </div>
+        <LogoLink imgSize={32} fontSize={20} gap="gap-2.5" />
         <div className="flex items-center gap-8">
           {[
             { href: '/',       label: 'Home',           internal: true },
             { href: '/terms',  label: 'Terms',          internal: true },
             { href: `mailto:${CONTACT_EMAIL}`, label: 'Contact', internal: false },
           ].map(l => l.internal
-            ? <Link key={l.label} href={l.href} className="transition-colors hover:text-white" style={{ fontSize: 15, color: t4 }}>{l.label}</Link>
-            : <a   key={l.label} href={l.href} className="transition-colors hover:text-white" style={{ fontSize: 15, color: t4 }}>{l.label}</a>
+            ? <Link key={l.label} href={l.href} className="link-underline" style={{ fontSize: 15, color: t1 }}>{l.label}</Link>
+            : <a   key={l.label} href={l.href} className="link-underline" style={{ fontSize: 15, color: t1 }}>{l.label}</a>
           )}
         </div>
-        <p style={{ fontSize: 14, color: t3 }}>
+        <p style={{ fontSize: 14, color: t1 }}>
           © {new Date().getFullYear()} {APP_NAME}. Made in India 🇮🇳
         </p>
       </div>

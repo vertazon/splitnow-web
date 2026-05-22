@@ -1,6 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { APP_NAME, APP_TAGLINE, APP_DESCRIPTION } from '@/lib/config';
+import { APP_NAME, APP_TAGLINE, APP_DESCRIPTION, CONTACT_EMAIL } from '@/lib/config';
+import { Nav } from '@/components/Nav';
+import { FaqAccordion } from '@/components/FaqAccordion';
+import { LogoLink } from '@/components/LogoLink';
 
 // ─── Shared style tokens ──────────────────────────────────────────────────────
 const t1  = '#F8F8F6';   // headings, primary
@@ -243,42 +246,6 @@ function PhoneMockup() {
   );
 }
 
-// ─── Nav ──────────────────────────────────────────────────────────────────────
-
-function Nav() {
-  return (
-    <nav className="fixed top-0 inset-x-0 z-50 flex items-center justify-between px-8 py-5"
-      style={{
-        background: 'rgba(31,31,30,0.92)',
-        borderBottom: '1px solid rgba(195,194,183,0.10)',
-        backdropFilter: 'blur(20px)',
-        WebkitBackdropFilter: 'blur(20px)',
-      }}>
-      <div className="flex items-center gap-3">
-        <Image src="/icon.png" alt={APP_NAME} width={32} height={32} className="rounded-[10px]" />
-        <span className="text-[18px] font-extrabold tracking-tight" style={{ color: t1 }}>{APP_NAME}</span>
-      </div>
-      <div className="hidden md:flex items-center gap-8">
-        {[
-          { href: '#features',     label: 'Features' },
-          { href: '#how-it-works', label: 'How it works' },
-          { href: '#faq',          label: 'FAQ' },
-        ].map(l => (
-          <a key={l.label} href={l.href}
-            className="text-[15px] font-semibold transition-colors hover:text-white"
-            style={{ color: t4 }}>
-            {l.label}
-          </a>
-        ))}
-      </div>
-      <div className="flex items-center gap-2">
-        <span className="text-[13px] font-semibold" style={{ color: t3 }}>Coming soon</span>
-        <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: tAcc }} />
-      </div>
-    </nav>
-  );
-}
-
 // ─── Hero ─────────────────────────────────────────────────────────────────────
 
 function Hero() {
@@ -316,7 +283,7 @@ function Hero() {
       {/* Feature tags */}
       <div className="flex flex-wrap justify-center gap-2 mb-10" style={{ position: 'relative', zIndex: 1 }}>
         {['2-tap logging', 'Real-time balances', 'Personal + shared', 'No bank linkage', 'Free to use'].map(tag => (
-          <span key={tag} className="font-semibold px-4 py-2 rounded-full border"
+          <span key={tag} className="hero-tag font-semibold px-4 py-2 rounded-full border"
             style={{ fontSize: 13, background: 'rgba(195,194,183,0.04)', borderColor: 'rgba(195,194,183,0.12)', color: t3 }}>
             {tag}
           </span>
@@ -714,33 +681,6 @@ function Testimonials() {
 // ─── FAQ ──────────────────────────────────────────────────────────────────────
 
 function FAQ() {
-  const items = [
-    {
-      q: 'Is SplitNow free?',
-      a: 'Yes, completely free. No subscription, no premium tier, no hidden charges. We believe expense tracking should be accessible to everyone.',
-    },
-    {
-      q: 'Do I need to link my bank account or UPI?',
-      a: "No. SplitNow is a tracking tool, not a payment app. We record who paid and who owes what. Actual money transfers happen separately between friends however you prefer — cash, UPI, whatever works.",
-    },
-    {
-      q: 'Can I track personal expenses too — not just shared ones?',
-      a: 'Yes. Log personal spends like subscriptions, solo travel, or daily chai alongside group expenses. Get a complete picture of your spending in one place.',
-    },
-    {
-      q: 'What happens if I add an expense by mistake?',
-      a: 'You can edit or delete any expense you added. Group members get notified of changes so everyone stays in sync.',
-    },
-    {
-      q: 'How do friends join my group?',
-      a: "Share your unique 8-character invite code with them. They sign up with their email, enter the code, and they're in. Takes under 2 minutes.",
-    },
-    {
-      q: 'Is my data safe?',
-      a: 'Your data is stored on Supabase (enterprise-grade PostgreSQL infrastructure). We never sell your data to third parties. You can delete your account and all your data at any time from within the app.',
-    },
-  ];
-
   return (
     <section id="faq" className="py-28 px-6 max-w-2xl mx-auto w-full">
       <div className="text-center mb-16">
@@ -749,22 +689,7 @@ function FAQ() {
           Common questions
         </h2>
       </div>
-      <div className="flex flex-col gap-3">
-        {items.map((item, i) => (
-          <details key={i} className="group rounded-[18px] border overflow-hidden"
-            style={{ background: cardBg, borderColor: cardBorder }}>
-            <summary className="flex items-center justify-between px-7 py-5 cursor-pointer select-none list-none"
-              style={{ color: t1 }}>
-              <span style={{ fontSize: 16, fontWeight: 700, paddingRight: 16 }}>{item.q}</span>
-              <span className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center font-bold transition-transform group-open:rotate-45"
-                style={{ background: 'rgba(255,255,255,0.05)', color: t3, fontSize: 20, lineHeight: 1 }}>+</span>
-            </summary>
-            <div className="px-7 pb-6">
-              <p style={{ fontSize: 15, lineHeight: 1.7, color: t2, borderTop: '1px solid rgba(195,194,183,0.10)', paddingTop: 18 }}>{item.a}</p>
-            </div>
-          </details>
-        ))}
-      </div>
+      <FaqAccordion />
     </section>
   );
 }
@@ -836,21 +761,18 @@ function Footer() {
   return (
     <footer className="py-12 px-6 border-t" style={{ borderColor: 'rgba(195,194,183,0.10)' }}>
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5">
-        <div className="flex items-center gap-2.5">
-          <Image src="/icon.png" alt={APP_NAME} width={24} height={24} className="rounded-md opacity-60" />
-          <span style={{ fontSize: 15, fontWeight: 700, color: t4 }}>{APP_NAME}</span>
-        </div>
+        <LogoLink imgSize={32} fontSize={20} gap="gap-2.5" />
         <div className="flex items-center gap-8">
           {[
             { href: '/privacy', label: 'Privacy Policy', internal: true },
             { href: '/terms',   label: 'Terms',          internal: true },
-            { href: 'mailto:hello@splitnow.in', label: 'Contact', internal: false },
+            { href: `mailto:${CONTACT_EMAIL}`, label: 'Contact', internal: false },
           ].map(l => l.internal
-            ? <Link key={l.label} href={l.href} className="transition-colors hover:text-white" style={{ fontSize: 15, color: t4 }}>{l.label}</Link>
-            : <a key={l.label} href={l.href} className="transition-colors hover:text-white" style={{ fontSize: 15, color: t4 }}>{l.label}</a>
+            ? <Link key={l.label} href={l.href} className="link-underline" style={{ fontSize: 15, color: t1 }}>{l.label}</Link>
+            : <a key={l.label} href={l.href} className="link-underline" style={{ fontSize: 15, color: t1 }}>{l.label}</a>
           )}
         </div>
-        <p style={{ fontSize: 14, color: t3 }}>
+        <p style={{ fontSize: 14, color: t1 }}>
           © {new Date().getFullYear()} {APP_NAME}. Made in India 🇮🇳
         </p>
       </div>
